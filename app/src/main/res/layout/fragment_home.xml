@@ -4,15 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".presentation.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/DataRec"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/problemSolving"
+        tools:itemCount="10"
+        tools:listitem="@layout/pix_item_layout" />
+
+    <TextView
+        android:id="@+id/problemSolving"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/teal_700"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Click Me"
+
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterString" />
+
+    <EditText
+        android:id="@+id/enterString"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:background="@drawable/edittext_rounded"
+        android:hint="Enter String for Solving Problem"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/problemSolving"
+        app:layout_constraintStart_toStartOf="@+id/problemSolving"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

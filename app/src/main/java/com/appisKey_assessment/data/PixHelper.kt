@@ -1,4 +1,4 @@
-package com.appisKey_assessment
+package com.appisKey_assessment.data
 
 import com.google.gson.annotations.SerializedName
 

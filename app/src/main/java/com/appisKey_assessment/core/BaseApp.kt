@@ -1,4 +1,4 @@
-package com.appisKey_assessment
+package com.appisKey_assessment.core
 
 import android.app.Application
 import android.os.StrictMode
@@ -9,7 +9,7 @@ class BaseApp : Application(){
 
 
     companion object{
-        lateinit var mInstance:BaseApp
+        lateinit var mInstance: BaseApp
     }
 
     override fun onCreate() {
@@ -17,7 +17,8 @@ class BaseApp : Application(){
 
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
-        mInstance=this
+        mInstance =this
+
     }
 
 

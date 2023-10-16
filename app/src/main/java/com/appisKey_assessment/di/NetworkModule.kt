@@ -1,5 +1,6 @@
-package com.appisKey_assessment
+package com.appisKey_assessment.di
 
+import com.appisKey_assessment.data.remote.PixApiServices
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

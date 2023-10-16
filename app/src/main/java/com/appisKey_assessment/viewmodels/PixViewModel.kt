@@ -1,13 +1,14 @@
-package com.appisKey_assessment
+package com.appisKey_assessment.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.appisKey_assessment.data.Hits
+import com.appisKey_assessment.data.repos.PixDataRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -21,9 +22,15 @@ class PixViewModel @Inject constructor (private var pixDataRepo: PixDataRepo) :V
    fun loadPixData(){
        viewModelScope.launch(Dispatchers.IO) {
            var pixHelper=pixDataRepo.LoadPixData()
-           Log.i("TAG", "loadPixData: 34344345v ${pixHelper}")
-           //livePixList.postValue(pixHelper.hits)
+           livePixList.postValue(pixHelper.body()?.hits)
        }
    }
+
+    fun setSelectedHit(hits: Hits){
+        pixDataRepo.setSelectedHit(hits)
+    }
+    fun getSelectedHit(): Hits? {
+        return pixDataRepo.getSelectedHit()
+    }
 
 }

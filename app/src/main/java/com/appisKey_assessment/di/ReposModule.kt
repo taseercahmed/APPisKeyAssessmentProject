@@ -1,7 +1,8 @@
-package com.appisKey_assessment.di.reposModule
+package com.appisKey_assessment.di
 
-import com.appisKey_assessment.PixApiServices
-import com.appisKey_assessment.PixDataRepo
+
+import com.appisKey_assessment.data.remote.PixApiServices
+import com.appisKey_assessment.data.repos.PixDataRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
